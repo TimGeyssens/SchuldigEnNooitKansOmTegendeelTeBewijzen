@@ -1,0 +1,13 @@
+# Beveilig gevoelige bestanden
+<FilesMatch "\.(db|db-wal|db-shm|sqlite)$">
+    Deny from all
+</FilesMatch>
+
+# Voorkom directory listing
+Options -Indexes
+
+# PHP configuratie
+<IfModule mod_php.c>
+    php_value session.cookie_httponly 1
+    php_value session.use_strict_mode 1
+</IfModule>
