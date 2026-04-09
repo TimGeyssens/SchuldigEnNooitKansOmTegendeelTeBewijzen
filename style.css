@@ -1,0 +1,1348 @@
+/* ============================================
+   SCHULDIG EN NOOIT KANS OM TEGENDEEL TE BEWIJZEN
+   Absurd satirisch design - want de realiteit is absurder
+   ============================================ */
+
+:root {
+    --bg: #1a1a2e;
+    --bg-light: #16213e;
+    --accent: #e94560;
+    --accent2: #f5a623;
+    --accent3: #00ff88;
+    --text: #eee;
+    --text-muted: #999;
+    --card-bg: #0f3460;
+    --card-border: #e94560;
+    --danger: #ff4444;
+    --success: #00cc66;
+    --stempel: #e94560;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ---- ALLES IS FINE BANNER ---- */
+.alles-is-fine-banner {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--accent),
+        var(--accent) 10px,
+        #c33 10px,
+        #c33 20px
+    );
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.alles-is-fine-banner span {
+    display: inline-block;
+    animation: scroll-banner 20s linear infinite;
+}
+
+@keyframes scroll-banner {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ---- NAVIGATIE ---- */
+.hoofdnav {
+    background: var(--bg-light);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px dashed var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-logo {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.3rem;
+    color: var(--accent);
+    text-decoration: none;
+    transform: rotate(-2deg);
+    display: inline-block;
+}
+
+.nav-logo:hover {
+    color: var(--accent2);
+    transform: rotate(2deg) scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+    border-color: var(--accent);
+    background: rgba(233, 69, 96, 0.15);
+    transform: rotate(-1deg);
+}
+
+.nav-admin {
+    background: var(--accent) !important;
+    color: #fff !important;
+    border-radius: 4px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* ---- CONTENT ---- */
+.content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    min-height: 60vh;
+}
+
+/* ---- FLASH BERICHTEN ---- */
+.flash {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    border: 2px dashed;
+}
+
+.flash-success {
+    background: rgba(0, 204, 102, 0.15);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.flash-error {
+    background: rgba(255, 68, 68, 0.15);
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* ---- HOMEPAGE ---- */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.hero h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.8rem;
+    color: var(--accent);
+    transform: rotate(-1deg);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.3);
+}
+
+.hero .subtitel {
+    font-size: 1.2rem;
+    color: var(--accent2);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.hero-uitleg {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--card-border);
+    transform: rotate(0.5deg);
+    position: relative;
+}
+
+.hero-uitleg::before {
+    content: "⚠️ OPGELET";
+    position: absolute;
+    top: -14px;
+    left: 20px;
+    background: var(--accent2);
+    color: #000;
+    padding: 2px 12px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.sectie-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.sectie-link {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.sectie-link:hover {
+    transform: rotate(-1deg) scale(1.03);
+    border-color: var(--accent2);
+    box-shadow: 0 5px 20px rgba(233, 69, 96, 0.3);
+}
+
+.sectie-link h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.sectie-link p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ---- KAARTEN (generiek) ---- */
+.kaart {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.kaart:nth-child(even) {
+    transform: rotate(0.3deg);
+}
+
+.kaart:nth-child(odd) {
+    transform: rotate(-0.3deg);
+}
+
+.kaart h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.kaart .meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+}
+
+.kaart .tekst {
+    line-height: 1.7;
+}
+
+/* ---- PAGINA TITEL ---- */
+.pagina-titel {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+    transform: rotate(-1deg);
+    display: inline-block;
+}
+
+.pagina-subtitel {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+/* ---- GRID ---- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ---- PODCAST EMBED ---- */
+.podcast-embed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.podcast-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ---- FORMULIEREN ---- */
+.formulier {
+    background: var(--card-bg);
+    border: 2px dashed var(--accent2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.formulier h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+}
+
+.formulier label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    color: var(--accent2);
+    font-size: 0.9rem;
+}
+
+.formulier input,
+.formulier textarea,
+.formulier select {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Comic Neue', cursive;
+    font-size: 1rem;
+}
+
+.formulier input:focus,
+.formulier textarea:focus,
+.formulier select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(233, 69, 96, 0.3);
+}
+
+.formulier textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border: 2px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--accent);
+    transform: rotate(-2deg) scale(1.05);
+}
+
+.btn-secondary {
+    background: transparent;
+    border-color: var(--accent2);
+    color: var(--accent2);
+}
+
+.btn-secondary:hover {
+    background: var(--accent2);
+    color: #000;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background: transparent;
+    color: var(--danger);
+}
+
+/* ---- STEMPEL EFFECT ---- */
+.stempel {
+    display: inline-block;
+    border: 3px solid var(--stempel);
+    color: var(--stempel);
+    padding: 0.3rem 1rem;
+    font-family: 'Permanent Marker', cursive;
+    transform: rotate(-5deg);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.stempel-goedgekeurd {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.stempel-wacht {
+    border-color: var(--accent2);
+    color: var(--accent2);
+}
+
+/* ---- FORUM ---- */
+.forum-topic {
+    background: var(--card-bg);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 8px 8px 0;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+    transition: all 0.2s;
+}
+
+.forum-topic:hover {
+    border-left-color: var(--accent2);
+    background: rgba(15, 52, 96, 0.8);
+    transform: translateX(5px);
+}
+
+.forum-topic h3 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.forum-topic .meta {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.forum-reply {
+    background: rgba(15, 52, 96, 0.5);
+    border-left: 3px solid var(--accent2);
+    padding: 1rem;
+    margin: 0.8rem 0 0.8rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.forum-reply .meta {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ---- RECHTEN PAGINA ---- */
+.rechten-artikel {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.rechten-artikel h3 {
+    color: var(--accent2);
+    font-family: 'Permanent Marker', cursive;
+    margin-bottom: 0.5rem;
+}
+
+.rechten-artikel p {
+    line-height: 1.7;
+    color: var(--text);
+}
+
+.rechten-intro {
+    background: var(--card-bg);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.rechten-intro::after {
+    content: "📋 OFFICIEEL";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 12px;
+    font-size: 0.75rem;
+    font-family: 'Permanent Marker', cursive;
+    border-radius: 4px;
+}
+
+/* ---- ADMIN ---- */
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.admin-sectie {
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.admin-sectie h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 0.5rem;
+}
+
+.admin-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.admin-item:last-child {
+    border-bottom: none;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.login-box {
+    max-width: 400px;
+    margin: 3rem auto;
+}
+
+/* ---- ZIEKENHUIS BADGE ---- */
+.zh-badge {
+    display: inline-block;
+    background: rgba(233, 69, 96, 0.2);
+    color: var(--accent);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ---- TELLER ---- */
+.teller {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 0.1rem 0.5rem;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 0.3rem;
+}
+
+/* ---- WATERMARK ---- */
+.bureaucratie-watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.7rem;
+    color: rgba(233, 69, 96, 0.15);
+    transform: rotate(-5deg);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+    background: var(--bg-light);
+    border-top: 3px dashed var(--accent);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer-stempel {
+    display: inline-block;
+    border: 3px double var(--accent);
+    padding: 0.8rem 2rem;
+    margin-bottom: 1rem;
+    transform: rotate(-3deg);
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+}
+
+.footer-tekst {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-tekst a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.footer-small {
+    font-size: 0.75rem;
+}
+
+/* ---- EMPTY STATE ---- */
+.leeg {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.leeg::before {
+    content: "🦗";
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-light);
+        padding: 1rem;
+        border-bottom: 3px dashed var(--accent);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .pagina-titel {
+        font-size: 1.6rem;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .sectie-links {
+        grid-template-columns: 1fr;
+    }
+
+    .forum-reply {
+        margin-left: 0.5rem;
+    }
+}
+
+/* ---- ANIMATIES ---- */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+}
+
+.shake-hover:hover {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* ---- DOSSIER LOOK VOOR GETUIGENISSEN ---- */
+.dossier {
+    background: var(--card-bg);
+    border: 2px solid #444;
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    font-family: 'Comic Neue', cursive;
+}
+
+.dossier::before {
+    content: "DOSSIER #" attr(data-id);
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: var(--bg);
+    padding: 0 8px;
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+    font-size: 0.75rem;
+}
+
+.dossier .inhoud {
+    border-left: 3px solid var(--accent2);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.dossier .auteur {
+    text-align: right;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ============================================
+   MEET THE HOSTS - CELEBRITY STYLE
+   Over-the-top alsof ze de Kardashians zijn
+   ============================================ */
+
+.hosts-pagina {
+    background: var(--bg);
+}
+
+/* Spotlight effect achter de titel */
+.hosts-spotlight {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(233,69,96,0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Host kaart */
+.host-card {
+    background: var(--card-bg);
+    border: 3px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.host-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3), var(--accent2), var(--accent));
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.host-card-left {
+    transform: rotate(-0.3deg);
+}
+
+.host-card-right {
+    transform: rotate(0.3deg);
+}
+
+/* Host header met foto + intro */
+.host-header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.host-foto-placeholder {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(233, 69, 96, 0.4), 0 0 60px rgba(233, 69, 96, 0.15);
+    animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 30px rgba(233, 69, 96, 0.4), 0 0 60px rgba(233, 69, 96, 0.15); }
+    50% { box-shadow: 0 0 40px rgba(233, 69, 96, 0.6), 0 0 80px rgba(233, 69, 96, 0.25); }
+}
+
+.host-initiaal {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.host-ster {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 2rem;
+    animation: spin-star 4s linear infinite;
+}
+
+@keyframes spin-star {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.host-intro {
+    flex: 1;
+}
+
+.host-naam {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+}
+
+.host-titels {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.host-titel-badge {
+    display: inline-block;
+    background: rgba(233, 69, 96, 0.15);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.host-tagline {
+    color: var(--accent2);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    border-left: 3px solid var(--accent2);
+    padding-left: 1rem;
+}
+
+/* Host bio secties */
+.host-bio {
+    margin-bottom: 1.5rem;
+}
+
+.host-bio-sectie {
+    margin-bottom: 1.5rem;
+}
+
+.host-bio-sectie h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent2);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.host-bio-sectie p {
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+/* Stats grid */
+.host-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.host-stat {
+    background: var(--bg);
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.host-stat:hover {
+    border-color: var(--accent);
+    transform: scale(1.05) rotate(-1deg);
+}
+
+.host-stat-nummer {
+    display: block;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.host-stat-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.3rem;
+}
+
+/* Documenten sectie */
+.host-documenten {
+    background: var(--bg);
+    border: 2px dashed var(--accent2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.host-documenten h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.host-doc-intro {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.host-doc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.host-doc-placeholder {
+    background: var(--card-bg);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: default;
+}
+
+.host-doc-placeholder:hover {
+    border-color: var(--accent2);
+    transform: rotate(-2deg);
+}
+
+.host-doc-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.host-doc-placeholder p {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.host-doc-status {
+    font-size: 0.75rem;
+    color: var(--accent2);
+    font-style: italic;
+}
+
+/* Samen sectie */
+.hosts-samen {
+    background: var(--card-bg);
+    border: 3px solid var(--accent);
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.hosts-samen::before {
+    content: "⭐ ⭐ ⭐ ⭐ ⭐";
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 10px;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.hosts-disclaimer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(245, 166, 35, 0.1);
+    border: 1px dashed var(--accent2);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: left;
+}
+
+/* Responsive hosts */
+@media (max-width: 768px) {
+    .host-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .host-foto-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+
+    .host-initiaal {
+        font-size: 3rem;
+    }
+
+    .host-naam {
+        font-size: 2rem;
+    }
+
+    .host-titels {
+        justify-content: center;
+    }
+
+    .host-tagline {
+        border-left: none;
+        border-top: 3px solid var(--accent2);
+        padding-left: 0;
+        padding-top: 0.8rem;
+        text-align: center;
+    }
+
+    .host-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hosts-spotlight {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+/* ============================================
+   HOE WORD IK GEEN SCHANDRA
+   ============================================ */
+
+.schandra-intro {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    background: var(--card-bg);
+    border: 3px solid var(--accent);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+}
+
+.schandra-intro::after {
+    content: "WAARSCHUWING: GIFTIG";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--danger);
+    color: #fff;
+    padding: 2px 12px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.schandra-avatar {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4a0e0e, var(--danger));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(255, 68, 68, 0.4);
+    animation: toxic-pulse 2s ease-in-out infinite;
+}
+
+@keyframes toxic-pulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(255, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(255, 68, 68, 0.7); }
+}
+
+.schandra-avatar span {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.schandra-uitleg {
+    flex: 1;
+}
+
+.schandra-uitleg p {
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.schandra-lijst {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.schandra-lijst li {
+    padding: 0.4rem 0;
+    font-size: 1.05rem;
+}
+
+.schandra-lijst li:last-child {
+    color: var(--danger);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 0.3rem;
+}
+
+/* Checklist grid */
+.schandra-check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.schandra-check {
+    background: var(--bg);
+    border: 2px solid var(--danger);
+    border-radius: 12px;
+    padding: 1.2rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.schandra-check::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--danger);
+}
+
+.schandra-check:hover {
+    transform: rotate(-1deg) scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.2);
+}
+
+.check-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.schandra-check h4 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--danger);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.schandra-check p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Tips grid */
+.schandra-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.schandra-tip {
+    background: var(--card-bg);
+    border: 2px solid var(--success);
+    border-radius: 12px;
+    padding: 1.2rem;
+    padding-top: 1.5rem;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.schandra-tip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--success);
+}
+
+.schandra-tip:hover {
+    transform: rotate(0.5deg) scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 204, 102, 0.15);
+}
+
+.tip-nummer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--success);
+    color: #000;
+    border-radius: 50%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.schandra-tip h4 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--success);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.schandra-tip p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Waarschuwing blok */
+.schandra-waarschuwing {
+    margin-top: 3rem;
+    background: rgba(233, 69, 96, 0.08);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.schandra-waarschuwing-inner {
+    padding: 2rem;
+}
+
+.schandra-waarschuwing h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.schandra-waarschuwing p {
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+.schandra-waarschuwing li {
+    line-height: 1.8;
+}
+
+/* Responsive schandra */
+@media (max-width: 768px) {
+    .schandra-intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .schandra-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .schandra-avatar span {
+        font-size: 2.5rem;
+    }
+
+    .schandra-lijst {
+        text-align: left;
+    }
+
+    .schandra-check-grid,
+    .schandra-tip-grid {
+        grid-template-columns: 1fr;
+    }
+}
