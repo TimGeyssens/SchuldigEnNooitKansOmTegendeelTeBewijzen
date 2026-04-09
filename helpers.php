@@ -99,6 +99,7 @@ function siteHeader(string $titel = '', string $extraClass = ''): void {
             <a href="ziekenhuizen.php">🏥 Ziekenhuizen</a>
             <a href="personeel.php">👨‍⚕️ Personeel</a>
             <a href="forum.php">💬 Forum</a>
+            <a href="schandra.php">🐍 Schandra</a>
             <a href="patientenrechten.php">⚖️ Rechten</a>
             <?php if (isAdmin()): ?>
                 <a href="admin.php" class="nav-admin">🔑 Admin</a>

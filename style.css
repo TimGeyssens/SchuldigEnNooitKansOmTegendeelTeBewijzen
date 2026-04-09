@@ -1101,3 +1101,248 @@ body {
         height: 200px;
     }
 }
+
+/* ============================================
+   HOE WORD IK GEEN SCHANDRA
+   ============================================ */
+
+.schandra-intro {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    background: var(--card-bg);
+    border: 3px solid var(--accent);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+}
+
+.schandra-intro::after {
+    content: "WAARSCHUWING: GIFTIG";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--danger);
+    color: #fff;
+    padding: 2px 12px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+.schandra-avatar {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4a0e0e, var(--danger));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(255, 68, 68, 0.4);
+    animation: toxic-pulse 2s ease-in-out infinite;
+}
+
+@keyframes toxic-pulse {
+    0%, 100% { box-shadow: 0 0 25px rgba(255, 68, 68, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(255, 68, 68, 0.7); }
+}
+
+.schandra-avatar span {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.schandra-uitleg {
+    flex: 1;
+}
+
+.schandra-uitleg p {
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.schandra-lijst {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.schandra-lijst li {
+    padding: 0.4rem 0;
+    font-size: 1.05rem;
+}
+
+.schandra-lijst li:last-child {
+    color: var(--danger);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 0.3rem;
+}
+
+/* Checklist grid */
+.schandra-check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.schandra-check {
+    background: var(--bg);
+    border: 2px solid var(--danger);
+    border-radius: 12px;
+    padding: 1.2rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.schandra-check::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--danger);
+}
+
+.schandra-check:hover {
+    transform: rotate(-1deg) scale(1.02);
+    box-shadow: 0 4px 15px rgba(255, 68, 68, 0.2);
+}
+
+.check-emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.schandra-check h4 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--danger);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.schandra-check p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+/* Tips grid */
+.schandra-tip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.schandra-tip {
+    background: var(--card-bg);
+    border: 2px solid var(--success);
+    border-radius: 12px;
+    padding: 1.2rem;
+    padding-top: 1.5rem;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.schandra-tip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--success);
+}
+
+.schandra-tip:hover {
+    transform: rotate(0.5deg) scale(1.02);
+    box-shadow: 0 4px 15px rgba(0, 204, 102, 0.15);
+}
+
+.tip-nummer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--success);
+    color: #000;
+    border-radius: 50%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.schandra-tip h4 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--success);
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.schandra-tip p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Waarschuwing blok */
+.schandra-waarschuwing {
+    margin-top: 3rem;
+    background: rgba(233, 69, 96, 0.08);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.schandra-waarschuwing-inner {
+    padding: 2rem;
+}
+
+.schandra-waarschuwing h3 {
+    font-family: 'Permanent Marker', cursive;
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.schandra-waarschuwing p {
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+}
+
+.schandra-waarschuwing li {
+    line-height: 1.8;
+}
+
+/* Responsive schandra */
+@media (max-width: 768px) {
+    .schandra-intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .schandra-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .schandra-avatar span {
+        font-size: 2.5rem;
+    }
+
+    .schandra-lijst {
+        text-align: left;
+    }
+
+    .schandra-check-grid,
+    .schandra-tip-grid {
+        grid-template-columns: 1fr;
+    }
+}

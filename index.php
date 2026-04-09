@@ -68,6 +68,11 @@ siteHeader();
             </p>
         </a>
 
+        <a href="schandra.php" class="sectie-link shake-hover">
+            <h3>🐍 Hoe Word Ik Geen Schandra?</h3>
+            <p>De gids die elk ziekenhuis zou moeten ophangen in de kantine.</p>
+        </a>
+
         <a href="patientenrechten.php" class="sectie-link shake-hover">
             <h3>⚖️ Patiëntenrechten</h3>
             <p>De rechten die je hebt — ook al doet niemand alsof.</p>
