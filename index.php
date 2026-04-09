@@ -30,6 +30,11 @@ siteHeader();
     </div>
 
     <div class="sectie-links">
+        <a href="hosts.php" class="sectie-link shake-hover">
+            <h3>⭐ Meet The Hosts</h3>
+            <p>Tim & Maxim — twee patiënten, één missie, nul budget.</p>
+        </a>
+
         <a href="podcasts.php" class="sectie-link shake-hover">
             <h3>📻 Podcasts</h3>
             <p>Luister naar onze absurde gesprekken over het systeem.

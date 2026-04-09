@@ -93,6 +93,7 @@ function siteHeader(string $titel = '', string $extraClass = ''): void {
     <nav class="hoofdnav">
         <a href="index.php" class="nav-logo">S.E.N.K.O.T.T.B.</a>
         <div class="nav-links">
+            <a href="hosts.php">⭐ Hosts</a>
             <a href="podcasts.php">📻 Podcasts</a>
             <a href="getuigenissen.php">📝 Getuigenissen</a>
             <a href="ziekenhuizen.php">🏥 Ziekenhuizen</a>
